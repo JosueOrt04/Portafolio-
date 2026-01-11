@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joshuar Ortiz – Portafolio</title>
+  <meta name="description" content="Portafolio de habilidades y proyectos de Joshua Gutiérrez." />
+  <meta property="og:title" content="Joshua Gutiérrez – Portafolio" />
+  <meta property="og:description" content="Habilidades, proyectos y contacto." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <!-- Canvas FX de fondo -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <img class="logo" src="assets/img/logo.svg" alt="Logo Joshua" width="40" height="40">
+        <h1>Joshuar Josue Ortiz Gutierrez</h1>
+      </div>
+      <nav>
+        <button class="menu-btn" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+        <ul id="menu">
+          <li><a href="#inicio" class="active">Inicio</a></li>
+          <li><a href="#habilidades">Stack Técnico</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </header>
+
+  
+  <main class="container">
+    <!-- HERO -->
+    <section id="inicio" class="hero reveal">
+      <div class="card">
+        <span class="chip">👋 Hola, soy</span>
+        <h2 class="title">Josue Ortiz — Desarrollador Full-Stack</h2>
+        <p class="subtitle">
+          Construyo aplicaciones web modernas con <b>React</b> y <b>Angular</b> en el frontend; 
+          <b>Node.js</b>, <b>Rust</b>, <b>Python</b>, <b>Java</b>, <b>Go</b> y <b>C++</b> en backend.
+          Experto en tiempo real con <b>Socket.IO</b> y <b>WebRTC</b>.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#proyectos">🚀 Ver proyectos</a>
+          <a class="btn" href="docs/CV.pdf" download>📄 Descargar CV</a>
+          <button class="btn" id="themeToggle" type="button">🌓 Tema</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>+20</b><div>Repos en GitHub</div></div>
+          <div class="stat"><b>4</b><div>Proyectos en producción</div></div>
+          <div class="stat"><b>3 años</b><div>Experiencia</div></div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Habilidades Profesionales (soft skills) -->
+      <div class="card skills-card">
+        <h3>💡 Habilidades Profesionales</h3>
+        <ul class="soft-skills">
+          <li>🤝 Trabajo en equipo y colaboración</li>
+          <li>🌍 Inglés intermedio (lectura, escritura y conversación)</li>
+          <li>🎯 Resolución de problemas y pensamiento crítico</li>
+          <li>📢 Comunicación efectiva</li>
+          <li>🕐 Gestión del tiempo y organización</li>
+          <li>🚀 Adaptabilidad y aprendizaje continuo</li>
+          <li>📊 Liderazgo en proyectos pequeños</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STACK TÉCNICO (con logos reales desde CDN) -->
+    <section id="habilidades" class="reveal">
+      <h2>Stack Técnico</h2>
+      <div class="grid stack">
+        <!-- Frontend -->
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" /><span>HTML</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" /><span>CSS</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><span>JavaScript</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" /><span>React</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="Angular" /><span>Angular</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" /><span>Vite</span></div>
+
+        <!-- Backend -->
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" /><span>Node.js</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" /><span>Express</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" alt="Rust" /><span>Rust</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /><span>Python</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span>Java</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" /><span>Go</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" /><span>C++</span></div>
+
+        <!-- Bases de datos -->
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" /><span>MySQL</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg" alt="MariaDB" /><span>MariaDB</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /><span>PostgreSQL</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" /><span>SQLite</span></div>
+
+        <!-- DevOps -->
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /><span>Git</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" /><span>GitHub Actions</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /><span>Docker</span></div>
+
+        <!-- Tiempo real -->
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.IO" /><span>Socket.IO</span></div>
+        <div class="stack-item"><img src="https://cdn.simpleicons.org/webrtc" alt="WebRTC" /><span>WebRTC</span></div>
+
+        <!-- Otros -->
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" /><span>Linux</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Diseño UI" /><span>Diseño UI</span></div>
+        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Pruebas" /><span>Pruebas</span></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="proyectos" class="reveal">
+      <h2>Proyectos Destacados</h2>
+      <div class="grid projects">
+        <article class="card project">
+          <div class="cover" role="img" aria-label="Sistema de equipos y canales"></div>
+          <h3>Teams Daxmo</h3>
+          <p>App colaborativa con equipos, canales, chat y videollamadas. Stack: React + Node + MySQL + Socket.IO + WebRTC.</p>
+          <div class="meta">
+            <span>💻 React</span><span>🧩 WebRTC</span><span>🗄️ MySQL</span>
+          </div>
+          <p><a href="#" target="_blank" rel="noreferrer">Código</a> · <a href="#" target="_blank" rel="noreferrer">Demo</a></p>
+        </article>
+        <article class="card project">
+          <div class="cover" role="img" aria-label="TTS en Rust"></div>
+          <h3>Text-to-Speech (Rust)</h3>
+          <p>Conversor de texto a audio en MP3 sin conexión, con interfaz web y servidor Node.js.</p>
+          <div class="meta"><span>🦀 Rust</span><span>🔊 MP3</span></div>
+          <p><a href="#" target="_blank" rel="noreferrer">Código</a></p>
+        </article>
+        <article class="card project">
+          <div class="cover" role="img" aria-label="SAPA ventas"></div>
+          <h3>SAPA – Sistema de ventas</h3>
+          <p>Panel de ventas e inventario con roles y reportes. PHP, MySQL y frontend moderno.</p>
+          <div class="meta"><span>📦 Inventario</span><span>🧮 Reportes</span></div>
+          <p><a href="#" target="_blank" rel="noreferrer">Código</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="reveal">
+      <h2>Contacto</h2>
+      <div class="contact">
+        <form name="contacto" onsubmit="enviarMensaje(event)">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="tunombre@email.com" required />
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntame sobre tu proyecto" required></textarea>
+          </div>
+          <button class="btn primary" type="submit">Enviar</button>
+          <small id="status" aria-live="polite"></small>
+        </form>
+        <div class="card">
+          <p>¿Prefieres escribirme directo?</p>
+          <p>📧 <a href="mailto:joshua@example.com">joshua@example.com</a></p>
+          <p>🐙 <a href="https://github.com/JosueOrt04" target="_blank" rel="noreferrer">github.com/your-user</a></p>
+          <p>💼 <a href="https://www.linkedin.com/in/your-user" target="_blank" rel="noreferrer">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    © <span id="year"></span> Joshua Gutiérrez. Hecho con ❤️ en México.
+  </footer>
+  <!-- ==== TOUR DE MASCOTA (guiado por secciones) ==== -->
+<div id="tour-mascot" class="tour-mascot" aria-live="polite" aria-label="Asistente">
+  <!-- Pingüino -->
+  <div class="tour-avatar" role="img" aria-label="Pingüino saludando">
+    <svg viewBox="0 0 128 128" width="64" height="64" class="penguin">
+      <ellipse cx="64" cy="116" rx="22" ry="7" fill="rgba(0,0,0,0.25)"/>
+      <path d="M64 12c-22 0-34 18-34 40s7 40 34 40 34-18 34-40S86 12 64 12Z" fill="#0f172a"/>
+      <ellipse cx="64" cy="60" rx="24" ry="28" fill="#f1f5f9"/>
+      <path d="M30 58c-10 2-18 8-18 16 0 6 6 8 12 4 8-5 13-12 16-20-3 0-6 0-10 0Z" fill="#0f172a" opacity=".85"/>
+      <path d="M98 58c10 2 18 8 18 16 0 6-6 8-12 4-8-5-13-12-16-20 3 0 6 0 10 0Z" fill="#0f172a" opacity=".85"/>
+      <circle cx="48" cy="46" r="10" fill="#e2e8f0"/>
+      <circle cx="80" cy="46" r="10" fill="#e2e8f0"/>
+      <circle cx="48" cy="46" r="4" fill="#0b1220"/>
+      <circle cx="80" cy="46" r="4" fill="#0b1220"/>
+      <path d="M58 56c4 4 8 4 12 0-4-2-8-2-12 0Z" fill="#f59e0b"/>
+      <path d="M52 92l-8 10h12l4-6-8-4Zm24 0 8 10H72l-4-6 8-4Z" fill="#f59e0b"/>
+      <!-- ala saludando -->
+      <circle cx="30" cy="58" r="6" fill="#0f172a" class="wing"/>
+    </svg>
+  </div>
+
+  <!-- Burbuja -->
+  <div class="tour-bubble">
+    <p id="tour-text">¡Hola! Te doy un recorrido rápido 👇</p>
+    <div class="tour-actions">
+      <button id="tour-next" type="button" class="tour-btn">Siguiente</button>
+      <button id="tour-skip" type="button" class="tour-btn outline">Omitir</button>
+    </div>
+  </div>
+</div>
+
+<!-- Botón para volver a iniciar el tour -->
+<button id="tour-replay" class="tour-replay" type="button" title="Repetir tour" aria-label="Repetir tour" hidden>🐧 Guía</button>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+:root{
+  --bg: #0b0d10;
+  --panel: #12161b;
+  --text: #e6eaf2;
+  --muted: #9aa4b2;
+  --brand: #0ea5e9;
+  --brand-2:#22d3ee;
+  --ring: 0 0 0 3px color-mix(in srgb, var(--brand) 30%, transparent);
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --code:#0b1220;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f7fafc; --panel:#ffffff; --text:#0b1220; --muted:#5b6877; --code:#0f172a; }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text); background: var(--bg); line-height:1.6; overflow-x:hidden;
+}
+a{color:var(--brand); text-decoration:none}
+a:hover{text-decoration:underline}
+.container{width:min(1100px, 100% - 2rem); margin-inline:auto}
+
+.header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(150%) blur(8px);
+  background:color-mix(in srgb, var(--panel) 85%, transparent); border-bottom:1px solid color-mix(in srgb, var(--panel) 70%, #000);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
+.brand{display:flex; align-items:center; gap:.75rem}
+.logo{width:40px; aspect-ratio:1; border-radius:12px; box-shadow:var(--shadow)}
+.brand h1{font-size:1.05rem; margin:0; letter-spacing:.3px}
+nav ul{display:flex; gap:1rem; list-style:none; margin:0; padding:0}
+nav a{padding:.4rem .7rem; border-radius:10px}
+nav a.active, nav a:hover{background:color-mix(in srgb, var(--brand) 18%, transparent); text-decoration:none}
+.menu-btn{display:none}
+
+/* Hero */
+.hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:2rem; padding:5rem 0 3rem}
+.hero .card{background:var(--panel); border:1px solid color-mix(in srgb, var(--panel) 70%, #000); border-radius:var(--radius); padding:2rem; box-shadow:var(--shadow)}
+.chip{display:inline-flex; align-items:center; gap:.45rem; padding:.25rem .6rem; border-radius:999px; border:1px solid color-mix(in srgb, var(--brand) 35%, transparent); color:#22d3ee; background:color-mix(in srgb, var(--brand) 10%, transparent); font-size:.85rem}
+.title{font-size:clamp(1.6rem, 4vw, 2.4rem); margin:.6rem 0 1rem; line-height:1.15}
+.subtitle{color:var(--muted); margin-top:.2rem}
+.cta{display:flex; gap:.8rem; margin-top:1.2rem; flex-wrap:wrap}
+.btn{display:inline-flex; align-items:center; gap:.55rem; padding:.75rem 1rem; border-radius:12px; border:1px solid color-mix(in srgb, var(--panel) 70%, #000); background:var(--panel); color:var(--text); cursor:pointer; transition:transform .15s ease, box-shadow .2s ease}
+.btn.primary{background: linear-gradient(135deg, var(--brand), var(--brand-2)); border:none; color:white}
+.btn:focus{outline:none; box-shadow: var(--ring)}
+.btn:hover{transform: translateY(-1px); box-shadow: 0 12px 22px rgba(0,0,0,.25)}
+
+.stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-top:1.2rem}
+.stat{background:var(--panel); border:1px solid color-mix(in srgb, var(--panel) 70%, #000); border-radius:14px; padding:1rem; transition:transform .2s ease}
+.stat:hover{transform: translateY(-3px)}
+
+/* Sections */
+section{padding:3rem 0}
+h2{font-size:clamp(1.3rem, 3.5vw, 1.8rem); margin:.2rem 0 1rem}
+.grid{display:grid; gap:1rem}
+
+/* ===== Stack Técnico (cuadros pequeños + transparentes) ===== */
+.stack{ grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+.stack-item{
+  display:flex; flex-direction:column; align-items:center; gap:.4rem;
+  background: transparent; /* transparente */
+  border:1px solid color-mix(in srgb, var(--brand) 35%, transparent);
+  border-radius:12px; padding:.6rem;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+.stack-item:hover{
+  transform:translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  border-color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 10%, transparent); /* highlight suave */
+}
+.stack-item img{ width:34px; height:34px; object-fit:contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
+.stack-item span{ font-size:.8rem; }
+
+/* ===== Tarjeta de habilidades blandas ===== */
+.skills-card{
+  background: var(--panel);
+  border: 1px solid color-mix(in srgb, var(--panel) 70%, #000);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.skills-card h3{
+  margin:0 0 .9rem 0; font-size:1.1rem; color: var(--brand-2);
+}
+.soft-skills{
+  list-style:none; margin:0; padding:0; display:grid; gap:.5rem;
+}
+.soft-skills li{
+  padding:.5rem .75rem; border-radius:10px;
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+  border:1px solid color-mix(in srgb, var(--brand) 25%, transparent);
+  font-size:.9rem; color:var(--text);
+  display:flex; align-items:center; gap:.4rem;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.soft-skills li:hover{ transform: translateX(4px); box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+
+/* Projects */
+.projects{grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))}
+.card{background:var(--panel); border:1px solid color-mix(in srgb, var(--panel) 70%, #000); border-radius:var(--radius); padding:1rem}
+.project .cover{height:140px; border-radius:12px; background:linear-gradient(135deg, color-mix(in srgb, var(--brand) 25%, transparent), transparent), linear-gradient(135deg, #1f2937, #0b1220); margin-bottom:.9rem}
+.project h3{margin:.3rem 0; font-size:1.05rem}
+.project p{color:var(--muted); margin:.3rem 0 .7rem}
+.meta{display:flex; align-items:center; gap:.6rem; color:var(--muted); font-size:.9rem}
+
+/* Contact */
+.contact{ display:grid; grid-template-columns: 1.1fr .9fr; gap:1rem; }
+form{display:grid; gap:.8rem}
+.field{display:grid; gap:.35rem}
+label{font-size:.9rem; color:var(--muted)}
+input, textarea{
+  width:100%; padding:.8rem .9rem; border-radius:12px; border:1px solid color-mix(in srgb, var(--panel) 70%, #000);
+  background:var(--panel); color:var(--text)
+}
+textarea{min-height:120px; resize:vertical}
+
+footer{padding:2rem 0; color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero{grid-template-columns: 1fr}
+  .contact{grid-template-columns: 1fr}
+}
+@media (max-width: 720px){
+  .menu-btn{display:inline-flex; background:none; border:none; color:var(--text); font-size:1.8rem}
+  nav ul{position:fixed; inset:64px 1rem auto; background:var(--panel); border:1px solid color-mix(in srgb, var(--panel) 70%, #000); border-radius:14px; padding:.5rem; display:none; flex-direction:column}
+  nav ul.open{display:flex}
+}
+
+/* Canvas FX background */
+#fx{
+  position:fixed; inset:0; width:100%; height:100%; z-index:-1;
+  background: radial-gradient(1200px 600px at 10% -5%, color-mix(in srgb, var(--brand) 14%, transparent), transparent),
+              radial-gradient(900px 500px at 110% 10%, color-mix(in srgb, var(--brand-2) 12%, transparent), transparent),
+              var(--bg);
+}
+
+/* Reveal on scroll */
+.reveal{opacity:0; transform: translateY(14px); filter: blur(3px); transition: opacity .6s ease, transform .6s ease, filter .6s ease}
+.reveal.in{opacity:1; transform:none; filter:none}
+
+/* Code block (por si lo usas en otra parte) */
+.code-card pre{margin:0; background:var(--code); color:#cbd5e1; padding:1rem; border-radius:12px; overflow:auto}
+
+
+/* ==== TOUR GUIADO ==== */
+.tour-mascot{
+  position: fixed; left: 0; top: 0; transform: translate(20px, 68vh);
+  display:flex; align-items:center; gap:.6rem; z-index:1000;
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  pointer-events:none; /* no bloquea clics, salvo burbuja */
+}
+.tour-avatar{ width:64px; height:64px; pointer-events:none; }
+.penguin .wing{
+  transform-origin: 30px 58px;
+  animation: wing-wave 1.8s ease-in-out infinite;
+}
+@keyframes wing-wave{
+  0%,100%{ transform: rotate(0deg); }
+  10%{ transform: rotate(22deg); }
+  20%{ transform: rotate(-10deg); }
+  35%{ transform: rotate(18deg); }
+  55%{ transform: rotate(-6deg); }
+}
+
+.tour-bubble{
+  pointer-events:auto;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  color: var(--text);
+  padding: .8rem 1rem;
+  border-radius: 14px;
+  max-width: 320px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.35);
+}
+.tour-bubble p{ margin:0 0 .6rem 0; font-size:.95rem; }
+.tour-actions{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.tour-btn{
+  appearance:none; cursor:pointer;
+  border:1px solid color-mix(in srgb, var(--brand) 55%, transparent);
+  background: color-mix(in srgb, var(--brand) 20%, transparent);
+  color: var(--text); border-radius:10px; padding:.45rem .8rem; font-size:.85rem;
+}
+.tour-btn.outline{ background:transparent; }
+
+.tour-replay{
+  position:fixed; bottom:20px; left:20px; z-index:1000;
+  width:auto; padding:.5rem .75rem; border-radius:999px; border:1px solid color-mix(in srgb, var(--brand) 55%, transparent);
+  background: color-mix(in srgb, var(--brand) 18%, transparent); color:#fff; cursor:pointer;
+  backdrop-filter: blur(8px);
+}
+
+/* Resalta la sección actual del tour */
+.tour-highlight{
+  outline: 2px solid color-mix(in srgb, var(--brand) 70%, transparent);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--brand) 12%, transparent);
+  border-radius: 12px;
+  transition: box-shadow .3s ease;
+}
+
+/* Respeta reduce-motion: fija la mascota */
+@media (prefers-reduced-motion: reduce){
+  .tour-mascot{ position: fixed; left: 20px; bottom: 20px; transform:none; }
+}
